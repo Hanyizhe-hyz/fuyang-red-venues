@@ -7,7 +7,7 @@ import requests
 import pandas as pd
 import qrcode
 from io import BytesIO
-st.set_page_config(page_title="阜阳红色场馆管理平台（简易版）", layout="wide")
+st.set_page_config(page_title="阜阳红色场馆管理平台", layout="wide")
 
 # =========================
 # 0) 配置：API 兜底 + 本地持久化
@@ -27,23 +27,23 @@ ORDERS_JSON = "orders.json"
 VENUES_LOCAL = [
     {
         "id": 1,
-        "name": "阜阳红色记忆展馆（示例）",
+        "name": "四九起义纪念馆",
         "desc": "展陈阜阳地区革命历史、人物与重要事件，适合研学与主题团日。",
-        "address": "安徽省阜阳市XX区XX路1号",
-        "phone": "0558-0000001",
+        "address": "安徽省阜阳市颍泉区行流镇王官集行政村",
+        "phone": "(0558)8624435",
         "status": "开放",
-        "hours": "周二至周日 09:00-17:00（16:30停止入馆）",
+        "hours": "8：00-11：30，14：30—17：30，双休日9：00—17：00（中午不休息）；周一闭馆。",
         "price": 0,
         "lat": 32.8890,
         "lng": 115.8140,
     },
     {
         "id": 2,
-        "name": "革命旧址纪念点（示例）",
+        "name": "临泉挺近大别山纪念馆",
         "desc": "旧址复原+讲解，支持研学预约与团体参观。",
-        "address": "安徽省阜阳市XX县XX镇XX村",
-        "phone": "0558-0000002",
-        "status": "维护中",
+        "address": "安徽省阜阳市临泉县韦寨镇吴营村",
+        "phone": "0558-5872546",
+        "status": "开放",
         "hours": "周三至周日 09:30-16:30",
         "price": 20,
         "lat": 32.9000,
@@ -51,11 +51,11 @@ VENUES_LOCAL = [
     },
     {
         "id": 3,
-        "name": "烈士纪念园（示例）",
-        "desc": "纪念园区+纪念碑+主题展陈，适合清明及主题活动。",
-        "address": "安徽省阜阳市XX区XX大道88号",
-        "phone": "0558-0000003",
-        "status": "闭馆",
+        "name": "王家坝抗洪纪念馆",
+        "desc": "纪念园区+纪念碑+主题展陈",
+        "address": "阜阳市阜南县王家坝镇",
+        "phone": "0558-1245614",
+        "status": "开放",
         "hours": "周一闭园；其余 08:30-17:30",
         "price": 10,
         "lat": 32.8750,
@@ -434,7 +434,7 @@ with tabs[5]:
 # =========================
 with tabs[6]:
     st.subheader("数据导入导出（CSV）")
-    st.write("用途：文旅部门/学校给你一张表，你可以直接导入；也可以把当前数据导出交付。")
+    st.write("用途：可以直接导入；也可以把当前数据导出交付。")
 
     # 导出
     df_venues = pd.DataFrame(VENUES)

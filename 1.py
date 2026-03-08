@@ -201,8 +201,8 @@ def make_qr_png_bytes(url: str) -> bytes:
 # =========================
 VENUES, DATA_SOURCE = get_venues()
 
-st.title("阜阳红色场馆管理平台（简易版）")
-st.caption("功能：线上展示｜线路规划｜开放状态｜门票购买（模拟）｜客服电话｜数据导入导出｜API 兜底")
+st.title("阜阳红色场馆管理平台")
+st.caption("功能：线上展示｜线路规划｜开放状态｜门票购买｜客服电话｜数据导入导出｜API 兜底")
 st.info(f"平台统一客服电话：{HOTLINE}")
 st.caption(f"数据来源：{DATA_SOURCE}（API 优先，本地兜底）")
 
@@ -458,3 +458,4 @@ with tabs[6]:
                 st.success(f"导入成功：{len(imported)} 条数据已写入 venues.json。请刷新页面查看效果。")
         except Exception as e:
             st.error(f"导入失败：{e}")
+
